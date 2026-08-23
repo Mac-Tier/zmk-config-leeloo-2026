@@ -1,0 +1,12 @@
+include:
+  - board: clickety_split_chiisai//zmk
+    shield: clickety_split_leeloo_rev3_left
+    artifact-name: leeloo-left
+
+  - board: clickety_split_chiisai//zmk
+    shield: clickety_split_leeloo_rev3_right
+    artifact-name: leeloo-right
+
+  - board: clickety_split_chiisai//zmk
+    shield: settings_reset
+    artifact-name: leeloo-settings-reset

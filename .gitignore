@@ -1,0 +1,16 @@
+# Local ZMK / west workspace
+.west/
+zmk/
+zmk-clickety-split/
+zephyr/
+modules/
+optional/
+
+# Local build output
+build/
+*.uf2
+*.zip
+
+# Editor / operating system files
+.vscode/
+.DS_Store
