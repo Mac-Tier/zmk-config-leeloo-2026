@@ -1,20 +1,12 @@
-name: Build ZMK firmware
+include:
+  - board: nice_nano//zmk
+    shield: clickety_split_leeloo_rev3_left
+    artifact-name: leeloo-left
 
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - "config/**"
-      - "build.yaml"
-      - ".github/workflows/build.yml"
-  pull_request:
-    paths:
-      - "config/**"
-      - "build.yaml"
-      - ".github/workflows/build.yml"
+  - board: nice_nano//zmk
+    shield: clickety_split_leeloo_rev3_right
+    artifact-name: leeloo-right
 
-jobs:
-  build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      archive_name: leeloo-firmware
+  - board: nice_nano//zmk
+    shield: settings_reset
+    artifact-name: leeloo-settings-reset
