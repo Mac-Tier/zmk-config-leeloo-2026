@@ -1,12 +1,15 @@
 include:
   - board: nice_nano//zmk
     shield: clickety_split_leeloo_rev3_left
+    snippets: studio-rpc-usb-uart
     artifact-name: leeloo-left
 
   - board: nice_nano//zmk
     shield: clickety_split_leeloo_rev3_right
+    snippets: studio-rpc-usb-uart
     artifact-name: leeloo-right
 
   - board: nice_nano//zmk
     shield: settings_reset
+    snippets: studio-rpc-usb-uart
     artifact-name: leeloo-settings-reset
