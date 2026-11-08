@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Short versions
-
 #define RGBON   &rgb_ug RGB_ON
 #define RGBOFF  &rgb_ug RGB_OFF
 #define RGBTOG  &rgb_ug RGB_TOG
@@ -21,14 +20,12 @@
 #define RGBBRD  &rgb_ug RGB_BRD
 #define RGBEFF  &rgb_ug RGB_EFF
 
-/*
- * Assign the cs-gpios pin to 4.
- * Uncomment these next few lines if implementing nice!view Displays
- */
-
-nice_view_spi: &spi0 { cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; };
-
 / {
+    /* SPI CS Pin Assignment for nice!view Displays */
+    nice_view_spi: &spi0 { 
+        cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; 
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -59,6 +56,7 @@ nice_view_spi: &spi0 { cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; };
         };
 
         firmware_layer {
+            label = "BLE";
             bindings = <
 &bt BT_SEL 0                    &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_CLR                       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
 &bootloader                     &sys_reset       &trans           &trans           &trans           &rgb_ug RGB_TOG                  &trans        &trans        &trans        &trans        &sys_reset    &bootloader
@@ -67,7 +65,7 @@ nice_view_spi: &spi0 { cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; };
                                                                   &trans           &trans           &trans           &trans  &trans  &trans        &trans        &trans
             >;
 
-            label = "BLE";
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
     };
 };
