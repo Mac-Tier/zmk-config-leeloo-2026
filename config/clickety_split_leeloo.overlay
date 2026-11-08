@@ -1,0 +1,26 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Leeloo Rev 3 Layout";
+        transform = <&default_transform>;
+        keys = <
+            // Left Half Keys
+            &kp R0C0 &kp R0C1 &kp R0C2 &kp R0C3 &kp R0C4 &kp R0C5
+            &kp R1C0 &kp R1C1 &kp R1C2 &kp R1C3 &kp R1C4 &kp R1C5
+            &kp R2C0 &kp R2C1 &kp R2C2 &kp R2C3 &kp R2C4 &kp R2C5
+            &kp R3C0 &kp R3C1 &kp R3C2 &kp R3C3 &kp R3C4 &kp R3C5
+
+            // Right Half Keys
+            &kp R0C6 &kp R0C7 &kp R0C8 &kp R0C9 &kp R0C10 &kp R0C11
+            &kp R1C6 &kp R1C7 &kp R1C8 &kp R1C9 &kp R1C10 &kp R1C11
+            &kp R2C6 &kp R2C7 &kp R2C8 &kp R2C9 &kp R2C10 &kp R2C11
+            &kp R3C6 &kp R3C7 &kp R3C8 &kp R3C9 &kp R3C10 &kp R3C11
+        >;
+    };
+};
