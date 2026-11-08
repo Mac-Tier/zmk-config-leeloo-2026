@@ -8,11 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-# Enable ZMK Studio runtime configuration protocol
-CONFIG_ZMK_STUDIO=y
-
-# Ensure dynamic storage is enabled so layout changes persist across power cycles
-CONFIG_ZMK_SETTINGS_RESET_ON_START=n
 
 // Short versions
 
