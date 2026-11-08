@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Short versions
+
 #define RGBON   &rgb_ug RGB_ON
 #define RGBOFF  &rgb_ug RGB_OFF
 #define RGBTOG  &rgb_ug RGB_TOG
@@ -27,7 +28,8 @@
 
 nice_view_spi: &spi0 { cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; };
 
-    / { keymap {
+/ {
+    keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -57,7 +59,6 @@ nice_view_spi: &spi0 { cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; };
         };
 
         firmware_layer {
-            label = "BLE";
             bindings = <
 &bt BT_SEL 0                    &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_CLR                       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
 &bootloader                     &sys_reset       &trans           &trans           &trans           &rgb_ug RGB_TOG                  &trans        &trans        &trans        &trans        &sys_reset    &bootloader
@@ -66,7 +67,7 @@ nice_view_spi: &spi0 { cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>; };
                                                                   &trans           &trans           &trans           &trans  &trans  &trans        &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            label = "BLE";
         };
     };
 };
