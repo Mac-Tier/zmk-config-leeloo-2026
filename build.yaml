@@ -1,12 +1,20 @@
-include:
-  - board: nice_nano/nrf52840/zmk
-    shield: clickety_split_leeloo_rev3_left
-    artifact-name: leeloo-left
+name: Build ZMK firmware
 
-  - board: nice_nano/nrf52840/zmk
-    shield: clickety_split_leeloo_rev3_right
-    artifact-name: leeloo-right
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/**"
+      - "build.yaml"
+      - ".github/workflows/build.yml"
+  pull_request:
+    paths:
+      - "config/**"
+      - "build.yaml"
+      - ".github/workflows/build.yml"
 
-  - board: nice_nano/nrf52840/zmk
-    shield: settings_reset
-    artifact-name: leeloo-settings-reset
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      archive_name: leeloo-firmware
