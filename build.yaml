@@ -1,12 +1,12 @@
 include:
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: clickety_split_leeloo_rev3_left
     artifact-name: leeloo-left
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: clickety_split_leeloo_rev3_right
     artifact-name: leeloo-right
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: leeloo-settings-reset
