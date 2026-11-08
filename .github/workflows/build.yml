@@ -2,13 +2,11 @@ name: Build ZMK firmware
 
 on:
   workflow_dispatch:
-
   push:
     paths:
       - "config/**"
       - "build.yaml"
       - ".github/workflows/build.yml"
-
   pull_request:
     paths:
       - "config/**"
@@ -17,6 +15,6 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@83bc82dbfdcda4ef392461202534a7cc337ca055
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       archive_name: leeloo-firmware
